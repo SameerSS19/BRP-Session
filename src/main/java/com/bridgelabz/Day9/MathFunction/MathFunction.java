@@ -41,4 +41,20 @@ public class MathFunction {
         }
         System.out.println("Binary number is : "+binary);
     }
+
+    /*
+     * Purpose: method for finding square root using newton's law
+     * num input from user
+     * returns the square root
+     * reference by GeeksforGeek etc
+     */
+    public double squareRootUsingNewtonMethod(int num) {
+        double x, epsilon;
+        x = num;
+        epsilon = 1e-15;
+        while (Math.abs(x - num / x) > epsilon * x){
+            x = (num / x + x) / 2.0;
+        }
+        return x;
+    }
 }
