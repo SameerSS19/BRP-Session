@@ -57,4 +57,18 @@ public class MathFunction {
         }
         return x;
     }
+    /*
+     * Purpose: method for finding prime number or not
+     * take num input from user
+     * returns true if prime else not prime
+     */
+    public static boolean isPrime(int num) {
+        if (num == 0 || num == 1)
+            return false;
+        for (int i = 2; i < num; i++){
+            if (num % 2 == 0)
+                return false;
+        }
+        return true;
+    }
 }
