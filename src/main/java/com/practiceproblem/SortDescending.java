@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class SortDecending {
+class SortDecending {
     public static void main(String[] args)
     {
         System.out.println("Enter the Size of Array:");
