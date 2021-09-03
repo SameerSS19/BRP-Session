@@ -10,6 +10,11 @@ public class MathFunction {
         System.out.println("Your Present Value is : "+presentAmount);
     }
 
+    /*
+     * static method getMax,getMin
+     * a minValue to return and maxValue to return max
+     * array of integer values given in a parameter
+     */
     // Method for getting the maximum value
     public static int getMax(int[] inputArray){
         int maxValue = inputArray[0];
