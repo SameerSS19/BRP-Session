@@ -1,6 +1,6 @@
 package com.practiceproblem;
 
-class Fibonnaci {
+class Fibonacci {
 
     static void primeFabonacciSeries(int n) {
         Boolean[] prime = new Boolean[n + 1];
@@ -24,7 +24,7 @@ class Fibonnaci {
         }
     }
     public static void main(String[] args){
-        int n = 30;
+        int n = 100;
         primeFabonacciSeries(n);
     }
 }
