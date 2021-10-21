@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class EvenOddWithoutMod {
     static int even(int n){
+
         return (n & 1);
     }
     public static void main(String[] args){
