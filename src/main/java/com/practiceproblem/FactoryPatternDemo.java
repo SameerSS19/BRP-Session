@@ -3,23 +3,15 @@ package com.practiceproblem;
 public class FactoryPatternDemo {
     public static void main(String[] args) {
         ShapeFactory shapeFactory = new ShapeFactory();
-
-        //get an object of Circle and call its draw method.
-        Shape shape1 = shapeFactory.getShape("CIRCLE");
-
-        //call draw method of Circle
+        Shape shape1 = shapeFactory.getInstance("CIRCLE");
         shape1.draw();
 
-        //get an object of Rectangle and call its draw method.
-        Shape shape2 = shapeFactory.getShape("RECTANGLE");
-
-        //call draw method of Rectangle
+        Shape shape2 = shapeFactory.getInstance("RECTANGLE");
         shape2.draw();
 
-        //get an object of Square and call its draw method.
-        Shape shape3 = shapeFactory.getShape("SQUARE");
-
-        //call draw method of square
+        Shape shape3 = shapeFactory.getInstance("SQUARE");
         shape3.draw();
+//        Circle circle = new Circle();
+//        circle.draw();
     }
 }
