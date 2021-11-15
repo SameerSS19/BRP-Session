@@ -21,7 +21,12 @@ public class AddressBookService {
         addressBookRepo.deleteRecord(person);
     }
 
-    public List<Person> getAllContactFromDB() {
+    public Person searchContactToDB(){
+      return   addressBookRepo.searchContact();
+    }
+
+    public List<Person> getAllContactFromDB()
+    {
        return addressBookRepo.getAllContactDB();
     }
 }

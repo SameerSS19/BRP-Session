@@ -18,21 +18,27 @@ public class AddressBookController {
         addressBookService.addContactToDB(person);
     }
 
-    public void updateContact(String first_name,String last_name,String phone_number){
+    public void updateContact(String first_name,String phone_number){
         Person person = new Person();
         person.setFirst_name(first_name);
-        person.setLast_name(last_name);
         person.setPhone_number(phone_number);
         addressBookService.updateContactToDB(person);
     }
 
-    public void deleteContact(String first_name){
+    public void deleteContact(String phone_number){
         Person person = new Person();
-        person.setFirst_name(first_name);
+        person.setPhone_number(phone_number);
         addressBookService.deleteContactToDB(person);
     }
 
-    public List<Person> getAllContact() {
+    public Person searchContact()
+    {
+      return  addressBookService.searchContactToDB();
+    }
+
+    public List<Person> getAllContact()
+
+    {
       return addressBookService.getAllContactFromDB();
     }
 }

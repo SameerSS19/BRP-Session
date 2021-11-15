@@ -9,12 +9,13 @@ import java.util.Scanner;
 
 public class AddressBookMain {
     public static void main(String[] args) {
+        Person person = new Person();
         try {
             int choice = 0;
             do {
                 System.out.println("Select an operation \n 1- Insert the new Contact \n 2- Update Contact \n 3- Delete Contact \n 4- Search Contact \n 5- Show All Contact ");
-                Scanner choicein = new Scanner(System.in);
-                choice = choicein.nextInt();
+                Scanner scanner = new Scanner(System.in);
+                choice = scanner.nextInt();
                 AddressBookController addressBookController = new AddressBookController();
                 UserInput userInput = UserInput.getInstance();
                 switch (choice) {
@@ -30,24 +31,29 @@ public class AddressBookMain {
                         addressBookController.addContact(first_name, last_name, city, phone_number);
                         break;
                     case 2:
-                        System.out.println("Enter your name: ");
-                        String first_name1 = userInput.stringInputUser();
-                        System.out.println("Enter the last name: ");
-                        String last_name1 = userInput.stringInputUser();
-                        System.out.println("Enter the Mobile number : ");
-                        String phone_number1 = userInput.stringInputUser();
-                        addressBookController.updateContact(first_name1, last_name1, phone_number1);
+                        System.out.println("");
+                        addressBookController.updateContact(person.getFirst_name(),person.getPhone_number());
                         break;
                     case 3:
                         System.out.println("Delete Contact");
-                        Person person = new Person();
-                        addressBookController.deleteContact(person.getFirst_name());
+                        addressBookController.deleteContact(person.getPhone_number());
+                        break;
+                    case 4:
+                        System.out.println("Search Contact ");
+                        for (Person each: addressBookController.searchContact(phone_number)) {
+                            System.out.println("Name: " + each.getFirst_name()+ " "+ each.getLast_name());
+                            System.out.println("City: " + each.getCity());
+                            System.out.println("Phone Number :" + each.getPhone_number());
+                            System.out.println( );
+                        }
                         break;
                     case 5:
                         System.out.println("All Contact: ");
                         for (Person each : addressBookController.getAllContact()) {
-                            System.out.println(each.getFirst_name());
-                            System.out.println(each.getPhone_number());
+                            System.out.println("Name: " + each.getFirst_name()+ " "+ each.getLast_name());
+                            System.out.println("City: " + each.getCity());
+                            System.out.println("Phone Number :" + each.getPhone_number());
+                            System.out.println( );
                         }
                         break;
                 }
